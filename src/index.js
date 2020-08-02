@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const {
   netId,
   port,
@@ -52,7 +53,8 @@ app.get("/status", async function (req, res) {
   } catch (e) {
     console.error("Problem with RPC", e);
   }
-  const { ethPrices } = fetcher;
+  var { ethPrices } = fetcher;
+  ethPrices["tbtc"] = process.env.TBTC_PRICE;
   res.json({
     relayerAddress: web3.eth.defaultAccount,
     mixers,

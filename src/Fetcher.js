@@ -45,9 +45,6 @@ class Fetcher {
         acc[this.currencyLookup[this.tokenAddresses[i]]] = price;
         return acc;
       }, {});
-
-      // arbitrarily add tbtc price
-      this.ethPrices["tbtc"] = process.env.TBTC_PRICE;
       setTimeout(() => this.fetchPrices(), 1000 * 30);
     } catch (e) {
       console.error("fetchPrices", e.message);
