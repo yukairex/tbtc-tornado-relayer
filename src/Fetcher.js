@@ -18,7 +18,7 @@ class Fetcher {
       cusdc: "164630000000000",
       usdc: "7878580000000000",
       usdt: "7864940000000000",
-      tbtc: "30000000000000000000", // 30eth
+      // tbtc: "30000000000000000000", // 30eth
     };
     this.tokenAddresses;
     this.oneUintAmount;
@@ -45,6 +45,9 @@ class Fetcher {
         acc[this.currencyLookup[this.tokenAddresses[i]]] = price;
         return acc;
       }, {});
+
+      // arbitrarily add tbtc price
+      this.ethPrices["tbtc"] = process.env.TBTC_PRICE;
       setTimeout(() => this.fetchPrices(), 1000 * 30);
     } catch (e) {
       console.error("fetchPrices", e.message);
