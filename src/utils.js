@@ -144,6 +144,9 @@ function isEnoughFee({
   const expense = toBN(toWei(gasPrices.fast.toString(), "gwei")).mul(toBN(gas));
   let desiredFee;
   console.log("expense:", parseInt(expense));
+  console.log("ethPrices:", parseInt(ethPrices));
+  console.log("currency:", parseInt(currency));
+  console.log("feePercent:", parseInt(feePercent));
   switch (currency) {
     case "eth": {
       desiredFee = expense.add(feePercent);
