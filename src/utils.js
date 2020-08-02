@@ -131,6 +131,7 @@ function isEnoughFee({
   ethPrices,
   fee,
 }) {
+  console.log("in isEnoughFee");
   const { decimals } = mixers[`netId${netId}`][currency];
   const decimalsPoint =
     Math.floor(relayerServiceFee) === relayerServiceFee
@@ -142,6 +143,7 @@ function isEnoughFee({
     .div(toBN(roundDecimal * 100));
   const expense = toBN(toWei(gasPrices.fast.toString(), "gwei")).mul(toBN(gas));
   let desiredFee;
+  console.log("expense:", parseInt(expense));
   switch (currency) {
     case "eth": {
       desiredFee = expense.add(feePercent);
@@ -153,15 +155,11 @@ function isEnoughFee({
         .mul(toBN(10 ** decimals))
         .div(toBN(ethPrices[currency]));
       desiredFee = desiredFee.add(feePercent);
+      console.log("desiredFee:", parseInt(desiredFee));
       break;
     }
   }
-  console.log(
-    "sent fee, desired fee, feePercent",
-    fee.toString(),
-    desiredFee.toString(),
-    feePercent.toString()
-  );
+
   if (fee.lt(desiredFee)) {
     return { isEnough: false, reason: "Not enough fee" };
   }
