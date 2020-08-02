@@ -172,7 +172,7 @@ module.exports = {
           "0.1": "0x4484C2ABEbA0D431c59D97207523d7dDe6C3caE4",
           "1": "0x1cddf698BCD67A83e65f2C87bB2b48ba0310A3a2",
         },
-        mixerAddress: "0xa609f2c9C5B7873F353C15D4ef6e151D14db69CC",
+        tokenAddress: "0xa609f2c9C5B7873F353C15D4ef6e151D14db69CC",
         symbol: "tBTC",
         decimals: 18,
       },
