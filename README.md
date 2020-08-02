@@ -1,4 +1,18 @@
-# Relayer for Tornado Cash [![Build Status](https://travis-ci.org/tornadocash/relayer.svg?branch=master)](https://travis-ci.org/tornadocash/relayer) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tornadocash/relayer.svg)](https://hub.docker.com/r/tornadocash/relayer/builds)
+# Relayer for TBTC Tornado Cash
+
+This is a submission of July Play for the Keep from @ Crypto Investor
+Forked from Tornado-Cash
+
+## Contract Addresses:
+
+1. 0.001 tBTC slot mixer: `0xAb4c4bc8749136474E5705d81Ba5936B5274AC33`
+1. 0.01 tBTC slot mixer: `0xEb7392dEcde73cd75C566CBFA6638dca37BA9D38`
+1. 0.1 tBTC slot mixer: `0x4484C2ABEbA0D431c59D97207523d7dDe6C3caE4`
+1. 1 tBTC slot mixer: `0x1cddf698BCD67A83e65f2C87bB2b48ba0310A3a2`
+
+## Relayer on Ropsten:
+
+`http://142.44.219.44:8000`
 
 ## Run locally
 

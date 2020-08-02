@@ -49,12 +49,9 @@ function isValidArgs(args) {
 
 function isKnownContract(contract) {
   const mixers = getMixers();
-  console.log("mixer:", mixers);
   for (let currency of Object.keys(mixers)) {
     for (let amount of Object.keys(mixers[currency].mixerAddress)) {
       if (mixers[currency].mixerAddress[amount] === contract) {
-        console.log(currency);
-        console.log(amount);
         return { valid: true, currency, amount };
       }
     }
